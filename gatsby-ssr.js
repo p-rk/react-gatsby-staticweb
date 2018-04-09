@@ -1,7 +1,16 @@
-/**
- * Implement Gatsby's SSR (Server Side Rendering) APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/ssr-apis/
- */
+import React from 'react';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import { renderToString } from 'react-dom/server';
+import combineReducers from './src/reducers';
 
- // You can delete this file if you're not using it
+const store = createStore(combineReducers);
+
+exports.replaceRenderer = ({ bodyComponent, replaceBodyHTMLString }) => {
+  const ConnectedBody = () => (
+    <Provider store={store}>
+      {bodyComponent}
+    </Provider>
+  );
+  replaceBodyHTMLString(renderToString(<ConnectedBody />));
+};
