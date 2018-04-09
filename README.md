@@ -10,7 +10,8 @@ This is an extended React Gatsby starter kit with many pre-configurations. Pleas
 - Lazing Loading Images
 - Works Offline (Service worker)
 - Eslint Rules (Airbnb)
-- Redux (TODO)
+- Redux
+- Multiple Reducers for code readability (combine reducers in /reducers/index.js)
 
 **Clone the Repo**
 ```
