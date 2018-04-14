@@ -1,4 +1,4 @@
-const lost = require(`lost`);
+const lost = require('lost');
 const autoprefixer = require('autoprefixer');
 
 module.exports = {
@@ -11,7 +11,7 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     {
-      resolve: `gatsby-plugin-postcss-sass`,
+      resolve: 'gatsby-plugin-postcss-sass',
       options: {
         postCssPlugins: [
           lost(),
